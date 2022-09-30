@@ -13,8 +13,8 @@
 </head>
 <body>
   <header>
-    <img src="./images/logo.svg" alt="Logo">
-    <navbar>
+    <nav>
+      <img src="./images/logo.svg" alt="Logo">
       <ul>
         <li>
           <a href="#">Promociones</a>
@@ -26,25 +26,27 @@
           <a href="#">Pedidos</a>
         </li>
       </ul>
-    </navbar>
+    </nav>
   </header>
   <main>
-    <section>
-      <div>
-        <h2>¡Endulzamos los mejores momentos con tu familia!</h2>
-        <h6>Dulces y juntos siempre.</h6>
-        <button>Pedir Ahora</button>
+    <section class="row">
+      <div class="column">
+        <h2 class="title">¡Endulzamos los mejores momentos con tu familia!</h2>
+        <h3>Dulces y juntos siempre.</h3>
+        <div class="wrapper">
+          <button>Pedir Ahora</button>
+        </div>
       </div>
-      <div>
-        <article>
-          <img src="./images/cake1.jpg" alt="Torta 1">
-          <img src="./images/cake2.jpg" alt="Torta 2">
-          <img src="./images/cake3.jpg" alt="Torta 3">
+      <div class="column">
+        <article class="slider">
+          <img src="./images/cake1.jpg" alt="Torta 1" class="slide">
+          <img src="./images/cake2.jpg" alt="Torta 2" class="slide">
+          <img src="./images/cake3.jpg" alt="Torta 3" class="slide">
         </article>
-        <div>
-          <button></button>
-          <button></button>
-          <button></button>
+        <div class="indicators">
+          <button class="indicator" onclick="currentDiv(1)" ></button>
+          <button class="indicator" onclick="currentDiv(2)"></button>
+          <button class="indicator" onclick="currentDiv(3)"></button>
         </div>
       </div>
     </section>
@@ -56,24 +58,25 @@
         <li>
           <a href="#">
             <img src="./images/facebook.png" alt="Ir a Facebook">
-          <a>
+          </a>
         </li>
         <li>
           <a href="#">
             <img src="./images/twitter.png" alt="Ir a Twitter">
-          <a>
+          </a>
         </li>
         <li>
           <a href="#">
             <img src="./images/instagram.png" alt="Ir a Instagram">
-          <a>
+          </a>
         </li>
       </ul>
     </div>
-    <hr />
     <div>
+      <hr />
       <h3>Cakes Shop (C) 2022. Todos los derechos reservados.</h3>
     </div>
   </footer>
+  <script src="./js/script.js"></script>
 </body>
 </html>
