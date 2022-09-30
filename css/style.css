@@ -109,6 +109,8 @@ div.wrapper button {
   font-weight: bold;
   color: white;
   font-size: large;
+  box-shadow: 1px 1px 1px 0px rgba(6, 0, 0, 0.2);
+
 }
 
 div.wrapper button:hover {
