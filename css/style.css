@@ -197,3 +197,11 @@ footer div ul li a:hover {
   cursor: pointer;
   background-color: #eb5f4a;
 }
+
+section {
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    #fb9383 0%,
+    rgb(148, 139, 239) 100%
+  );
+}
