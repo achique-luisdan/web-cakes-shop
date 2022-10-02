@@ -16,7 +16,7 @@ def post_list(request):
           }
       },
       {
-          'name': 'Basic Vanilla Cake',
+          'name': 'Basic Vanilla Cake Basic Vanilla Cake Basic Vanilla Cake',
           'description': 'Pensando en los graves problemas de obesidad de la actualidad, el Basic Vanilla Cake reduce la cantidad de calorías para consumo.',
           'price': 190,
           'image': 'https://images.pexels.com/photos/5945565/pexels-photo-5945565.jpeg?auto=compress&cs=tinysrgb&w=1600',
