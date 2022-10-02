@@ -46,7 +46,7 @@ let $promotions = document.getElementById("promotions");
 
 function getPromotions() {
   // http://127.0.0.1:8000/promotions
-  let url = '/dummy/promotions.json';
+  let url = './dummy/promotions.json';
   fetch(url)
       .then(response  => {
         if (response.status === 200){
