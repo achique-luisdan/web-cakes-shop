@@ -1,6 +1,7 @@
 :root {
   --surface: #ffffff;
   --surface-hover: #d3d3d3;
+  --on-surface: #636363;
   --primary: #ef6c58;
   --primary-hover: #eb5f4a;
   --primary-focused: #fb9383;
@@ -18,7 +19,7 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-header{
+body > header{
   position: sticky;
   top: 0px;
 }
@@ -91,7 +92,6 @@ img.slide {
 }
 
 article.slider {
-  border-radius: 20px;
   width: 100%;
   box-shadow: 0 0 10px #00000033;
   overflow: hidden;
@@ -175,6 +175,7 @@ footer {
 
 footer div:nth-child(1) {
   display: flex;
+  flex-wrap: wrap;
 }
 
 footer div:nth-child(1) > img{
@@ -228,4 +229,102 @@ hr {
   border-top-left-radius: 5px;
   border-block-start-width: 0px;
   min-height: 1px;
+}
+
+div#promotions {
+  display: grid;
+  gap: 20px;
+  padding: 0% 5%;
+  margin: 2%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+article.promotion {
+  width: 100%;
+  display: grid;
+}
+
+article.promotion img {
+  width: 100%;
+  object-fit: cover;
+}
+
+article.promotion header {
+  color: var(--secondary);
+  display: grid;
+  padding: 2% 0px;
+  grid-template-columns: 3fr 2fr;
+}
+
+article.promotion header h3:nth-child(2){
+  justify-self: end;
+}
+
+article.promotion header h3:nth-child(1){
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+article.promotion header + div{
+  padding: 2% 0px;
+  color: var(--on-surface);
+  line-height: 1.5;
+}
+
+
+article.promotion div {
+  align-self: end;
+}
+
+article.promotion div button {
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 30px;
+  border: none;
+  text-transform: uppercase;
+  padding: 2%;
+  font-weight: bold;
+  color: var(--surface);
+  font-size: large;
+  box-shadow: 1px 1px 1px 0px #06000033;
+}
+
+article.promotion div button:hover {
+  cursor: pointer;
+  background-color: var(--primary-hover);
+}
+
+section > h2.title {
+  font-size: xx-large;
+  font-weight:900;
+  color: var(--secondary);
+  text-align: center;
+  overflow: hidden;
+}
+
+section.container {
+  padding: 2%;
+}
+
+
+@media screen  and (max-width: 415px){
+  div#promotions {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  nav img {
+    width: 100%;
+  }
+  nav ul {
+    width: 100%;
+  }
+
+  footer div:nth-child(1) > img{
+    width: 100%;
+  }
+  footer div:nth-child(1) > ul {
+    width: 100;
+  }
 }
