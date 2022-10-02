@@ -41,29 +41,46 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-fetch('http://127.0.0.1:8000/promotions')
-    .then(response => response.text())
-    .then(data => {
-      console.log (data)
-      const products = JSON.parse (data);
-      console.log (products)
-      let $promotions = document.getElementById("promotions");
-      $promotions.innerHTML = '';
-      products.products.forEach(productElement => {
-        $promotions.innerHTML += `
-          <article class="promotion">
-            <img src="${productElement.image}" alt="" height="200">
-            <header>
-              <h3>${productElement.name}</h3>
-              <h3>$${productElement.promotion.price}</h3>
-            </header>
-            <div>
-            ${productElement.description}
-            </div>
-            <div>
-              <button>Pedir Ahora</button>
-            </div>
-          </article>
-        `
+let $promotions = document.getElementById("promotions");
+
+
+function getPromotions() {
+  let url = 'http://127.0.0.1:8000/promotions';
+  fetch(url)
+      .then(response  => {
+        if (response.status === 200){
+          return response.json();
+        }
+        else {
+          return [];
+        }
+      })
+      .then(data => {
+          console.log (data);
+            const promotions = data;
+            $promotions.innerHTML = '';
+            promotions.products.forEach(productElement => {
+              $promotions.innerHTML += `
+                <article class="promotion">
+                  <img src="${productElement.image}" alt="" height="200">
+                  <header>
+                    <h3>${productElement.name}</h3>
+                    <h3>$${productElement.promotion.price}</h3>
+                  </header>
+                  <div>
+                  ${productElement.description}
+                  </div>
+                  <div>
+                    <button>Pedir Ahora</button>
+                  </div>
+                </article>
+              `
+            });
+      })
+      .catch(error => {
+        console.warn(error);
+        $promotions.innerHTML = `¡Ups! Algo salió mal [${error}]`;
       });
-    });
+}
+
+getPromotions();
