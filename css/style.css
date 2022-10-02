@@ -327,4 +327,10 @@ section.container {
   footer div:nth-child(1) > ul {
     width: 100;
   }
+  section.row div.column {
+    width: 100%;
+    text-align: center;
+    padding: 4%;
+  }
+
 }
