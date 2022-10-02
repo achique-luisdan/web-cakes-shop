@@ -62,7 +62,7 @@ nav ul li a:hover {
   color: var(--primary);
 }
 
-section {
+section:nth-child(1) {
   background: radial-gradient(
     farthest-corner at 40px 40px,
     var(--primary-focused) 0%,
