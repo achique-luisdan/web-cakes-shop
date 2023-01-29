@@ -1,13 +1,11 @@
 <template>
-  <section class="container">
-    <h2 class="title">Productos</h2>
-    <div id="promotions"></div>
-  </section>
+  <ProductsList />
 </template>
 
 <style></style>
 <script lang="ts">
+import ProductsList from '../components/ProductsList.vue';
 export default {
-  components: {},
+  components: { ProductsList },
 };
 </script>
