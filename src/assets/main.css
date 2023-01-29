@@ -320,16 +320,18 @@ section.container {
   padding: 2%;
 }
 
-
+@media screen  and (max-width: 1080px){
+  nav a {
+    width: 100%;
+  }
+}
 @media screen  and (max-width: 415px){
   div#promotions,  div#products{
     grid-template-columns: repeat(1, 1fr);
   }
 
 
-  nav img {
-    width: 100%;
-  }
+
   nav ul {
     width: 100%;
   }

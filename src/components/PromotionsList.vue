@@ -49,7 +49,9 @@ export default {
                     <h4>$${product.price}</h4>
                   </header>
                   <div>
-                  ${product.description}
+                  ${
+                    product.description ? product.description : 'Si descripción'
+                  }
                   </div>
                   <div>
                     <button>Agregar al Carrito</button>
