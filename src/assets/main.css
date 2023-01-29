@@ -233,7 +233,7 @@ hr {
   min-height: 1px;
 }
 
-div#promotions {
+div#promotions, div#products {
   display: grid;
   gap: 20px;
   padding: 0% 5%;
@@ -255,7 +255,7 @@ article.promotion header {
   color: var(--secondary);
   display: grid;
   padding: 2% 0px;
-  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-columns: 7fr 2fr 1fr;
 }
 
 article.promotion header h3:nth-child(2){
@@ -322,7 +322,7 @@ section.container {
 
 
 @media screen  and (max-width: 415px){
-  div#promotions {
+  div#promotions,  div#products{
     grid-template-columns: repeat(1, 1fr);
   }
 
