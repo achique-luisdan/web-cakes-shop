@@ -1,3 +1,5 @@
+@import './base.css';
+
 :root {
   --surface: #ffffff;
   --surface-hover: #d3d3d3;
@@ -33,7 +35,7 @@ nav {
   box-shadow: 1px 1px 2px 1px #00000033;
 }
 
-nav img {
+nav a {
   width: 20%;
 }
 
@@ -48,7 +50,7 @@ nav ul {
 nav ul li {
   list-style: none;
   margin: auto;
-  padding: 2%;
+  padding: 1%;
   overflow: hidden;
 }
 
@@ -63,7 +65,7 @@ nav ul li a:hover {
   color: var(--primary);
 }
 
-section:nth-child(1) {
+section:nth-child(1).hero {
   background: radial-gradient(
     farthest-corner at 40px 40px,
     var(--primary-focused) 0%,
@@ -253,12 +255,23 @@ article.promotion header {
   color: var(--secondary);
   display: grid;
   padding: 2% 0px;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 3fr 2fr 1fr;
 }
 
 article.promotion header h3:nth-child(2){
-  justify-self: end;
+  width: 100%;
+  text-align: end;
 }
+
+article.promotion header h4 {
+  color: var(--on-surface);
+  text-decoration:line-through;
+  text-align: end;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 
 article.promotion header h3:nth-child(1){
   white-space: nowrap;
