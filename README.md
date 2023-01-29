@@ -12,13 +12,11 @@ Web de Tienda de Tortas
 
 Las herramientas utilizadas en el desarrollo del proyecto fueron:
 
-### Frontend
-
 * [Node JS v14 o superior](https://nodejs.org/es/) - Entorno de Ejecución de Servidor para JavaScript
 
-* [Angular v14](https://angular.io/) - Framework Web Frontend para crear SPA (Single Page Aplication).
+* [Vue v3.2.45](https://vuejs.org/) - Framework Web Frontend Progresivo para crear SPA (Single Page Application).
  
-* [NgRx v14.1.0](https://ngrx.io/) - Gestión del Estado Global de Aplicaciones Angular
+* [Pinia v2.0.28](https://pinia.vuejs.org/) - Gestión del Estado Global de Aplicaciones Vue
 
 ### Backend
 
@@ -29,8 +27,40 @@ Las herramientas utilizadas en el desarrollo del proyecto fueron:
 
 ## Instalación 🔧
 
+Para instalar las herramientas necesarias:
+
+### Paso 1. Instalar Node.js
+
+Acceder al sitio oficial de [Node.js](https://nodejs.org/), descargar e instalar.
+
+### Paso 2. Instalar dependencias del proyecto
+
+Accede a la carpeta del proyecto y ejecuta el siguiente comando:
+
+```sh
+npm install
+```
+
+### Paso 3. Levantar servidor de desarrollo
+
+```sh
+npm run dev
+```
+
+### Paso 4. Pasar linter
+
+```sh
+npm run lint
+```
+
+### Paso 5. Compilar proyecto
+
+```sh
+npm run build
+```
 
 ## Reseñas (Reviews) 💞
 
 
 ## Mejora Continua 🚀
+

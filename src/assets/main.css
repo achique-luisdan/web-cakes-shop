@@ -1,3 +1,5 @@
+@import './base.css';
+
 :root {
   --surface: #ffffff;
   --surface-hover: #d3d3d3;
@@ -63,7 +65,7 @@ nav ul li a:hover {
   color: var(--primary);
 }
 
-section:nth-child(1) {
+section:nth-child(1).hero {
   background: radial-gradient(
     farthest-corner at 40px 40px,
     var(--primary-focused) 0%,
