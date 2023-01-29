@@ -20,7 +20,6 @@ export default {
   methods: {
     getPromotions() {
       let $promotions = document.getElementById('promotions');
-      // http://127.0.0.1:8000/promotions
       let url = 'http://localhost:3000/api/promotions';
       fetch(url)
         .then(response => {
@@ -35,6 +34,7 @@ export default {
           $promotions.innerHTML = '';
           promotions.forEach(
             (product: {
+              [x: string]: any;
               image: any;
               name: any;
               price: any;
@@ -45,7 +45,8 @@ export default {
                   <img src="${product.image}" alt="" height="200">
                   <header>
                     <h3>${product.name}</h3>
-                    <h3>$${product.price}</h3>
+                    <h3>$${product.bestPromotion.price}</h3>
+                    <h4>$${product.price}</h4>
                   </header>
                   <div>
                   ${product.description}

@@ -255,12 +255,23 @@ article.promotion header {
   color: var(--secondary);
   display: grid;
   padding: 2% 0px;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 3fr 2fr 1fr;
 }
 
 article.promotion header h3:nth-child(2){
-  justify-self: end;
+  width: 100%;
+  text-align: end;
 }
+
+article.promotion header h4 {
+  color: var(--on-surface);
+  text-decoration:line-through;
+  text-align: end;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 
 article.promotion header h3:nth-child(1){
   white-space: nowrap;
