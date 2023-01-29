@@ -1,23 +1,4 @@
 <template>
-  <header>
-    <nav>
-      <img
-        src="src/assets/images/logo.svg"
-        alt="Logo"
-      />
-      <ul>
-        <li>
-          <RouterLink to="/promotions">Promociones</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/products">Productos</RouterLink>
-        </li>
-        <li>
-          <a href="#">Pedidos</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
   <main>
     <section class="row hero">
       <div class="column">
@@ -61,6 +42,7 @@
         </div>
       </div>
     </section>
+    <PromotionList />
   </main>
   <footer>
     <div>
@@ -103,8 +85,11 @@
 </template>
 
 <script lang="ts">
-import { RouterLink } from 'vue-router';
+import PromotionList from '../components/PromotionsList.vue';
 export default {
+  components: {
+    PromotionList,
+  },
   data() {
     return {
       slideIndex: 0,
