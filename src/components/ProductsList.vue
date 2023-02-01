@@ -1,25 +1,66 @@
 <template>
   <section class="container">
     <h2 class="title">Productos</h2>
-    <div id="products"></div>
+    <div id="products">
+      <article
+        class="promotion"
+        v-for="(product, index) in products"
+        :key="index"
+      >
+        <img
+          :src="product.image"
+          alt=""
+          height="200"
+        />
+        <header>
+          <h3>{{ product.name }}</h3>
+          <h3>
+            ${{
+              product.bestPromotion
+                ? product.bestPromotion.price
+                : product.price
+            }}
+          </h3>
+          <h4 v-if="product.bestPromotion != undefined">
+            ${{
+              product.bestPromotion
+                ? `
+          ${product.price}
+          `
+                : ''
+            }}
+          </h4>
+        </header>
+        <div>
+          {{ product.description ? product.description : 'Sin descripción' }}
+        </div>
+        <div>
+          <button>Agregar al Carrito</button>
+        </div>
+      </article>
+      <h2 v-if="message != ''">{{ message }}</h2>
+    </div>
   </section>
 </template>
 
 <style></style>
 
 <script lang="ts">
+import type { Product } from '@/models/product';
+
 export default {
   data() {
     return {
       promotions: [],
+      products: Object as unknown as Product[],
+      message: '',
     };
   },
-  mounted() {
-    this.getPromotions();
+  mounted(): void {
+    this.getProducts();
   },
   methods: {
-    getPromotions() {
-      let $products = document.getElementById('products');
+    getProducts() {
       let url = 'http://localhost:3000/api/products';
       fetch(url)
         .then(response => {
@@ -30,53 +71,16 @@ export default {
           }
         })
         .then(data => {
-          const products = data;
-          $products.innerHTML = '';
-          products.forEach(
-            (product: {
-              [x: string]: any;
-              image: any;
-              name: any;
-              price: any;
-              description: any;
-            }) => {
-              $products.innerHTML += `
-                <article class="promotion">
-                  <img src="${product.image}" alt="" height="200">
-                  <header>
-                    <h3>${product.name}</h3>
-                    <h3>$${
-                      product.bestPromotion
-                        ? product.bestPromotion.price
-                        : product.price
-                    }</h3>
-                    ${
-                      product.bestPromotion
-                        ? '<h4>$' + product.price + '</h4>'
-                        : ''
-                    }
-                  </header>
-                  <div>
-                  ${
-                    product.description
-                      ? product.description
-                      : 'Sin descripción'
-                  }
-                  </div>
-                  <div>
-                    <button>Agregar al Carrito</button>
-                  </div>
-                </article>
-              `;
-            }
-          );
-          if (products.length <= 0) {
-            $products.innerHTML = `No se encontraron promociones disponibles.`;
+          this.products = data;
+          if (this.products.length <= 0) {
+            this.message = `No se encontraron productos disponibles.`;
+          } else {
+            this.message = '';
           }
         })
         .catch(error => {
           console.warn(error);
-          $products.innerHTML = `¡Ups! Algo salió mal [${error}]`;
+          this.message = `¡Ups! Algo salió mal [${error}]`;
         });
     },
   },
