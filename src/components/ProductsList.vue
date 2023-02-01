@@ -71,7 +71,7 @@ export default {
             }
           );
           if (products.length <= 0) {
-            $products.innerHTML = `No se encontraron promociones disponibles.`;
+            $products.innerHTML = `No se encontraron productos disponibles.`;
           }
         })
         .catch(error => {
